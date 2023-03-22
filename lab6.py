@@ -11,6 +11,12 @@ def encode(user_inp):
         encoded_str += str((int(element) + 3) % 10)
     return encoded_str
 
+def decode(user_inp):
+    decoded_str = ''
+    for element in user_inp:
+        decoded_str += str((int(element) - 3) % 10)
+    return decoded_str
+
 user_input = ''
 
 def main():
@@ -27,7 +33,8 @@ def main():
             print()
         elif option == 2:
             pwd = encode(user_input)
-            print(f'The encoded password is {pwd}, and the original password is {user_input}.')
+            old_pwd = decode(user_input)
+            print(f'The encoded password is {pwd}, and the original password is {old_pwd}.')
             print()
 
 if __name__ == "__main__":
